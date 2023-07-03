@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ThoughtsComponent } from './components/thoughts/thoughts.component';
+import { ListThoughtsComponent } from './components/list-thoughts/list-thoughts.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ThoughtsComponent } from './components/thoughts/thoughts.component';
     HeaderComponent,
     FooterComponent,
     ThoughtsComponent,
+    ListThoughtsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
