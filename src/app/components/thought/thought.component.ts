@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { PensamentosInterface } from 'src/app/interface';
 
 @Component({
   selector: 'app-thought',
@@ -6,7 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./thought.component.css'],
 })
 export class ThoughtComponent {
-  @Input() pensamento = {
+  @Input() pensamento: PensamentosInterface = {
+    id: 0,
     conteudo: 'I love Angular',
     autoria: 'Nay',
     modelo: 'modelo3',
