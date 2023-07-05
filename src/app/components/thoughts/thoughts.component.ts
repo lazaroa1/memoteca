@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { PensamentosInterface } from 'src/app/interface';
+import { PensamentoService } from '../pensamento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-thoughts',
@@ -8,14 +10,17 @@ import { PensamentosInterface } from 'src/app/interface';
 })
 export class ThoughtsComponent {
   pensamento: PensamentosInterface = {
-    id: 1,
-    conteudo: 'Aprendendo Angular',
-    autoria: 'Dev',
-    modelo: 'model1',
+    conteudo: '',
+    autoria: '',
+    modelo: 'modelo1',
   };
 
+  constructor(private service: PensamentoService, private router: Router) {}
+
   criarPensamento() {
-    alert('Novo pensamento criado!');
+    this.service.criar(this.pensamento).subscribe(() => {
+      this.router.navigate(['/listarPensamento']);
+    });
   }
 
   cancelar() {
