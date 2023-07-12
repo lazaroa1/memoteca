@@ -28,4 +28,10 @@ export class PensamentoService {
     const url = `${this.API}/${id}`;
     return this.http.get<PensamentosInterface>(url);
   }
+
+  editar(pensamento: PensamentosInterface): Observable<PensamentosInterface> {
+    const url = `${this.API}/${pensamento.id}`;
+
+    return this.http.put<PensamentosInterface>(url, pensamento);
+  }
 }
